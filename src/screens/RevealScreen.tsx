@@ -232,9 +232,11 @@ export default function RevealScreen({ onNext }: { onNext: () => void }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-display text-sm tracking-widest text-deep-rose/70 uppercase md:text-base"
+          className="font-display tracking-widest text-deep-rose/70 uppercase md:text-base"
         >
-          HAPPY 21st BIRTHDAY
+          <span className="text-sm md:text-base">HAPPY </span>
+          <span className="text-3xl md:text-4xl font-bold text-deep-rose/90">21<sup className="text-lg md:text-xl">st</sup></span>
+          <span className="text-sm md:text-base"> BIRTHDAY</span>
         </motion.p>
 
         <motion.h1
