@@ -234,7 +234,7 @@ export default function RevealScreen({ onNext }: { onNext: () => void }) {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="font-display text-sm tracking-widest text-deep-rose/70 uppercase md:text-base"
         >
-          HAPPY BIRTHDAY
+          HAPPY 21st BIRTHDAY
         </motion.p>
 
         <motion.h1
