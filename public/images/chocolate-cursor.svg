@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="39" viewBox="0 0 48 56" fill="none">
+  <defs>
+    <linearGradient id="milkChocolate" x1="13" y1="3" x2="31" y2="33" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BD7751"/>
+      <stop offset=".46" stop-color="#9A5739"/>
+      <stop offset="1" stop-color="#7B412B"/>
+    </linearGradient>
+    <linearGradient id="foil" x1="8" y1="22" x2="34" y2="37" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F7F8"/>
+      <stop offset=".52" stop-color="#C9D4D9"/>
+      <stop offset="1" stop-color="#AAB8C0"/>
+    </linearGradient>
+    <linearGradient id="orangeWrapper" x1="14" y1="32" x2="29" y2="49" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E38B42"/>
+      <stop offset="1" stop-color="#C96C2D"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(2 2) rotate(-25 24 26)">
+    <!-- Orange wrapper and its folded crimped edge -->
+    <path d="M12 30.5h24v13.8c0 3.1-2.5 5.7-5.7 5.7H17.7c-3.1 0-5.7-2.5-5.7-5.7V30.5Z" fill="url(#orangeWrapper)" stroke="#B95D2C" stroke-width="1"/>
+    <path d="M12.5 43.5h23M14 46h20M16 48h16" stroke="#F0A45C" stroke-width=".8" opacity=".8"/>
+    <path d="m15 50 1.5 1.2m4.5-1.2 1.2 1.2m4.8-1.2 1.2 1.2m4.8-1.2 1.2 1.2" stroke="#A94F2B" stroke-width="1"/>
+
+    <!-- Four molded milk-chocolate squares -->
+    <rect x="10.5" y="2" width="27" height="31.5" rx="5" fill="#61341F"/>
+    <path d="M12.3 6.7c0-1.7 1.4-3 3-3h17.4c1.7 0 3 1.4 3 3v23.9c0 1.7-1.4 3-3 3H15.3c-1.7 0-3-1.4-3-3V6.7Z" fill="url(#milkChocolate)"/>
+    <path d="M14.2 6.2c4.2-1.7 12.6-1.7 19 0" stroke="#E5A77B" stroke-width="1.2" stroke-linecap="round" opacity=".72"/>
+    <path d="M24 5v25.1M13.5 17h21" stroke="#673722" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M24 5v25.1M13.5 17h21" stroke="#D18C60" stroke-width=".85" stroke-linecap="round" opacity=".72"/>
+    <path d="M15.5 8.6h5.3m6.3 0h5.1M15.5 19.7h5.3m6.3 0h5.1" stroke="#F0BE96" stroke-width="1" stroke-linecap="round" opacity=".48"/>
+
+    <!-- Partly opened silver foil folded across the lower chocolate -->
+    <path d="M8.2 23.8c-.2-2 1.4-3.6 3.4-3.6h25.1c2 0 3.5 1.6 3.5 3.6v8.4L8.7 38.1l-.5-14.3Z" fill="url(#foil)" stroke="#AAB8C0" stroke-width="1"/>
+    <path d="M11.5 23.5h25.1" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity=".88"/>
+    <path d="m11 31 8-2.4m3.3-1 14.5-4.3" stroke="#F9FCFD" stroke-width="1" stroke-linecap="round" opacity=".72"/>
+    <path d="M8.8 36.2 38 28" stroke="#A8B5BB" stroke-width=".8" opacity=".55"/>
+    <ellipse cx="14" cy="27.2" rx="2" ry="2.7" fill="#FAFCFD" opacity=".85"/>
+    <path d="m8.7 38 4.8-1.4-.2 4.8-3.4-.9L8.7 38Z" fill="#D9E1E4"/>
+  </g>
+</svg>

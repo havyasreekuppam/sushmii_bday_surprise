@@ -1,105 +1,154 @@
 export const birthdayData = {
-  herName: "Havya",
-  myName: "Vamshi & Neha",
+  herName: "SUSMITHA",
+  myName: "kannaya",
+  birthday: "December 15",
+  age: 19,
 
   intro: {
-    greeting: "Hey Havya... 🌷",
-    message: "We made a little something for you.",
-    buttonText: "Open your surprise ✨",
+    greeting: "Oye SUSMITHA... 💗",
+    message: "This little world is all yours.",
+    buttonText: "Tap here",
+  },
+
+  welcome: {
+    title: "Oye Susmitha..💕",
+    subtitle: "This little world is all yours",
+    bubble: "Guess what? This little teddy has a message for you...",
+    buttonText: "Open your surprise 💗",
   },
 
   reveal: {
-    subtitle: "You didn't think we'd let your birthday pass without being extra, did you? 😌💗",
-    buttonText: "Let's go ↓",
+    heading: "HAPPY 19TH BIRTHDAY SUSMIII... 🥳",
+    subtitle: "There's so much I want to tell you, and today seems like the perfect day to begin.",
+    message: "There's so much I want to tell you, and today seems like the perfect day to begin.",
+    buttonText: "Let's go... ❤️",
   },
 
+  warnings: {
+    heading: "A few warnings Before we proceed 😝...",
+    subtitle: "Listen up",
+    approvalText: "I approve to these warnings",
+    list: [
+      {
+        title: "When I'm on call, the rest of the world can wait a little!\"",
+        detail: "",
+      },
+      {
+        title: "Your laughing face.",
+        detail: "Save some smiles for tomorrow; every laugh of yours costs a thousand pearls.\"",
+      },
+      {
+        title: "Your Amnesia",
+        detail: "You can forget the whole world, but don't you dare forget your favourite headache.\"",
+      },
+      {
+        title: "I want a permanent place in your heart, fully recognised, properly recorded and never written off.\"",
+        detail: "",
+      },
+    ],
+  },
+
+  music: {
+    heading: "Every Melody Has A Little Of You",
+    subtitle: "A few melodies, just for you",
+    songs: [
+      { dedication: "My Beautiful Jabili", song: "Jaamurathri", emoji: "🌙" },
+      { dedication: "Lost In Your Eyes", song: "Vaalu Kanuladana", emoji: "👀" },
+      { dedication: "My Heart Found You", song: "Yeto Vellipoindi Manasu", emoji: "💞" },
+      { dedication: "Beauty Of My Dreams", song: "Andamaina Premarani", emoji: "🌹" },
+      { dedication: "All Because Of You", song: "Naa Manasukemaindi", emoji: "💗" },
+      { dedication: "My Destination", song: "Oh Cheliya", emoji: "🦋" },
+    ],
+  },
+
+  letter: `My Dear ❤️🌷
+
+From the first time I saw you in 7th class, I never knew that a small crush would turn into such a beautiful part of my life. 🥹❤️
+
+I carried those feelings for years, even through the rejection in 10th class. And honestly, I never imagined that one day, towards the end of our first year of intermediate, you'd be the one proposing to me. 💌
+
+And here we are, 2.5 years later. ❤️✨
+
+There is something I want you to understand. I love you for being YOU. Not for how you look, not for how perfect you think you should be, and certainly not for anything you feel insecure about. I love the person you are, with all your little habits, your thoughts, your craziness and everything that makes you who you are. 🫶🏻
+
+And madam, please try to update your memory software occasionally 😂💗 You forget things faster than I can tell you! No worries, I'll be your personal reminder app for life. 🤭
+
+If there's one thing I want you to remember, it's that you never have to become someone else to be loved by me. ❤️
+
+Happy Birthday, my favourite kutti! 🎂🎀💖`,
+
   photos: [
-    { src: "/photos/photo1.jpg", caption: "The trio. Bengaluru. 02 Aug 2026. 🖤" },
-    { src: "/photos/photo2.jpg", caption: "Flower crown queen 🌸" },
-    { src: "/photos/photo3.jpg", caption: "Lucky Chan vibes 🐱✨" },
-    { src: "/photos/photo4.jpg", caption: "Cat ears because obviously 🐾" },
-    { src: "/photos/photo5.jpg", caption: "Saree queen era 💙" },
-    { src: "/photos/photo6.jpg", caption: "Havya + Neha = 🤍" },
-    { src: "/photos/photo7.jpg", caption: "Vamshi + Havya = 💙" },
+    { src: "/photos/1.jpeg", caption: "as pink🌸" },
+    { src: "/photos/2.jpeg", caption: "queen..👸" },
+    { src: "/photos/3.jpeg", caption: "uss..🥹❤️" },
+    { src: "/photos/4.jpeg", caption: "Our world..❤️" },
+    { src: "/photos/5.jpeg", caption: "classy🖤" },
+    { src: "/photos/6.jpeg", caption: "flower queen💐" },
+    { src: "/photos/7.jpeg", caption: "slayy.." },
   ],
-
-  specialThings: [
-    { title: "Your kindness 🌷", hint: "Tap to see why...", message: "The way you show up for people — even when no one asks you to — is one of the most beautiful things about you." },
-    { title: "Your smile", hint: "You already know this one...", message: "It genuinely lights up the room. Not in a cliché way. In a 'everyone-feels-better-when-you're-around' way." },
-    { title: "Your chaotic energy 😂", hint: "This deserves an explanation.", message: "Never change. The world needs more people who can turn a normal day into an absolute adventure." },
-    { title: "The way you care about people", hint: "This one is actually special.", message: "You notice the small things. You remember. You check in. That's rare and it matters more than you know." },
-    { title: "📱 Havya vs. Panic", hint: "Okay... we need to talk about this one.", message: "Havya gets tense → panic mode activated → somehow both the physical SIM AND eSIM disappear. 💀📱😭\n\nSo now my job is simple: keep you calm before you delete something important again. 😂🫶🏻\n\nWhenever you start panicking, just breathe and call me. I'll help you chill before anything else gets deleted. 😂❤️" },
-    { title: "The way you make ordinary moments fun", hint: "Somehow you make everything an adventure.", message: "Grocery store? Fun. Random walk? Fun. Doing nothing? Somehow still fun with you. That's a superpower." },
-    { title: "Your love for cats 🐱", hint: "Honestly, this explains a lot.", message: "You love cats enough that obviously we had to give you a tiny cat companion for this website. 🐱💗" },
-    { title: "Your laugh", hint: "Once it starts... there's no stopping it.", message: "When you really laugh — like properly, full-on lose it — everyone around you starts laughing too. It's genuinely contagious. Never stop. 😂✨" },
-  ],
-
-  btsMoods: [
-    { emoji: "😊", mood: "Havya when happy", song: "Dynamite", reason: "Pure energy. Can't sit still. Everyone around you starts smiling too.", trackId: "5QDLhrAOJJdNAmCTJ8xMyW" },
-    { emoji: "😭", mood: "Havya being dramatic", song: "Fake Love", reason: "The theatrics. The expressions. Oscar-worthy every single time.", trackId: "5O2P9iiztwhomNh8xkR9lJ" },
-    { emoji: "🌙", mood: "Havya at 2am", song: "Mikrokosmos", reason: "Deep talks, random thoughts, and that peaceful late-night version of you.", trackId: "2MJfzpOPNTDABMWaFq1lYC" },
-    { emoji: "🤪", mood: "Havya being chaotic", song: "Go Go", reason: "No thoughts, just vibes. The unhinged energy we love.", trackId: "3BCAMQi15VjcAjJesPsPpV" },
-    { emoji: "🥺", mood: "Havya being soft", song: "Spring Day", reason: "When you get emotional and pretend you're fine. We see you.", trackId: "5GbVzSolrIEq5um0JbZ26Z" },
-    { emoji: "💪", mood: "Havya in boss mode", song: "MIC Drop", reason: "When you decide something, it's done. No one's stopping you.", trackId: "6nc95CGLXnDqsRT32m2nXG" },
-    { emoji: "😴", mood: "Havya being lazy", song: "Telepathy", reason: "Couch. Phone. Snacks. Don't talk to me. Perfect day.", trackId: "6nVDGEOPFnOTC0sPKCN0dr" },
-    { emoji: "💜", mood: "Havya with us", song: "Friends", reason: "Because this is literally our song. No explanation needed.", trackId: "1yIeYgtCWaUOPBgh0h6IS9" },
-  ],
-
-  letter: `To the friend who has always been there, 🌷💗
-
-Some people enter our lives like passing seasons, beautiful for a while, then gone with the wind. 🍃
-But you stayed. ❤️
-
-Through the loud days and the quiet ones,
-through laughter that made our stomachs hurt 😂,
-and moments when words were simply not enough. 🫂
-
-You have been the kind of friend
-who never needed an invitation to care,
-who showed up without being asked,
-who listened even when we didn't know how to explain,
-and somehow made everything feel a little lighter. ✨
-
-There are friendships built on memories,
-but ours feels built on something deeper —
-on countless little moments, 🌸
-on unspoken understanding,
-on knowing that no matter how far life takes us,
-there will always be a place where we can return
-and find you exactly where you have always been. 🏡💕
-
-On your birthday, we hope you know how deeply you are appreciated. 🥹❤️
-Not just for the things you have done for us,
-but for the person you are —
-kind, genuine, patient, and wonderfully you. 🌷✨
-
-May life give you the same warmth you have so freely given to others. 🤍
-May your dreams find their way to you, 🌙
-may your heart always have reasons to smile, 😊
-and may you never forget
-that you have two people cheering for you, today and on every ordinary day that follows. 🫶🏻
-
-Thank you for being our safe place, our constant, our laughter, and one of the most beautiful chapters in the story of our lives. 📖💗
-
-Happy Birthday, Havya! 🎂🎀🐱💜`,
 
   wishes: [
-    "We hope you laugh a little louder this year.",
-    "We hope you get everything you've been quietly working for.",
-    "We hope you make memories you'll talk about for years.",
-    "We hope this friendship only gets better with time.",
-    "We hope you're genuinely happy.",
+    "May you become the best doctor, but remember I'm your most complicated patient.",
+    "May your stethoscope hear thousands of heartbeats, but never miss mine.",
   ],
+  wishDetails: {
+    heading: "A Few Little Wishes From My Heart",
+    list: [
+      "May you become the best doctor, but remember I'm your most complicated patient.",
+      "May your stethoscope hear thousands of heartbeats, but never miss mine.",
+    ],
+  },
 
-  coupon: {
-    title: "A Birthday Treat for Havya 🎟️",
-    reward: "ONE FREE TREAT",
-    description: "Redeemable for: Food / Coffee / Ice Cream / Anything Havya chooses 😌",
-    paidBy: "Neha & Krishna",
+  contract: {
+    heading: "❤️ The Love Contract",
+    content: [
+      "1. You agree to keep smiling, because your smile is officially my favourite thing.",
+      "2. I promise to stand beside you through every little adventure, dream and challenge.",
+      "3. You agree to never stop sharing your little stories, silly thoughts and random moments with me.",
+      "4. Unlimited love, endless care and absolutely no expiry date.",
+      "5. Both parties agree that this contract is lifelong and cannot be cancelled. ❤️",
+      "Signed with love,",
+      "Your favourite person.",
+    ],
+    buttonText: "Sign the contract ❤️",
+  },
+
+  terms: {
+    heading: "Terms & Conditions 💌",
+    list: [
+      "1. I reserve the right to disappear occasionally and return with extra affection.",
+      "2. Stealing food from each other's plate is legally permitted.",
+      "3. Random mood swings must be handled with unlimited patience.",
+      "4. No cancellation, no refunds, and no escaping this cuteness contract.",
+      "5. Patience is mandatory when dealing with my legendary reply speed. ❤️",
+    ],
+    buttonText: "I accept with all my heart ❤️",
   },
 
   finale: {
+    heading: "Happy 19th Birthday, Susmiii! 💗",
+    signature: "With all my love,",
+    sender: "kannaya ❤️",
+    date: "December 15",
+    buttonText: "Experience it again 💗",
     message: "We're really glad our paths crossed.",
     closing: "You deserve a really good one. 🌷",
+  },
+
+  specialThings: [
+    { title: "Your kindness 🌷", hint: "Tap to see why...", message: "You are the gentle kind of love I never want to lose." },
+    { title: "Your smile", hint: "You already know this one...", message: "It makes the whole world feel softer." },
+  ],
+
+  btsMoods: [
+    { emoji: "😊", mood: "Susmitha when happy", song: "jaamurathri", reason: "Your smile turns every quiet moment into a memory.", trackId: "track-1" },
+    { emoji: "💖", mood: "Susmitha in love", song: "Naa manasukemaindi", reason: "Your happiness becomes mine too.", trackId: "track-2" },
+  ],
+
+  coupon: {
+    title: "A Birthday Treat for Susmitha 🎟️",
+    reward: "ONE FREE TREAT",
+    description: "Redeemable for: Chocolate / Coffee / Dessert / Anything Susmitha chooses 😌",
+    paidBy: "kannaya",
   },
 }

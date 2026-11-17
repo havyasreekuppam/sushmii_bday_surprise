@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { birthdayData } from '../data/birthdayData'
 import CuteCat from '../components/CuteCat'
@@ -8,19 +8,13 @@ const DECORATIONS = ['✿', '✦', '♡', '☆', '❀', '♪', '⚡', '🐾']
 
 export default function SpecialThings() {
   const [revealed, setRevealed] = useState<Set<number>>(new Set())
-  const [allRevealed, setAllRevealed] = useState(false)
   const [finalRevealed, setFinalRevealed] = useState(false)
   const [catMood, setCatMood] = useState<'idle' | 'happy' | 'excited' | 'sleepy'>('idle')
   const [catSpeech, setCatSpeech] = useState("I approve of these observations. 🐱")
 
   const items = birthdayData.specialThings
   const totalCards = items.length
-
-  useEffect(() => {
-    if (revealed.size >= totalCards && !allRevealed) {
-      setAllRevealed(true)
-    }
-  }, [revealed, totalCards, allRevealed])
+  const allRevealed = revealed.size >= totalCards
 
   const toggle = (i: number) => {
     const next = new Set(revealed)

@@ -13,6 +13,9 @@
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-handwritten: 'Dancing Script', cursive;
+  --font-handwritten-body: 'Kalam', 'Dancing Script', cursive;
+  --font-romantic: 'Allura', 'Dancing Script', cursive;
+  --font-cassandra: 'Cassandra by Billy Argel', 'Cassandra', 'Dancing Script', cursive;
 }
 
 @layer base {
@@ -20,17 +23,484 @@
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
+
   body {
-    font-family: var(--font-body);
-    background: var(--color-warm-white);
-    color: #4a3f4a;
-    overflow-x: hidden;
     margin: 0;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='21' rx='7' ry='5.5' fill='%23c77d8a'/%3E%3Ccircle cx='11' cy='12' r='3.5' fill='%23c77d8a'/%3E%3Ccircle cx='21' cy='12' r='3.5' fill='%23c77d8a'/%3E%3Ccircle cx='16' cy='9' r='3' fill='%23c77d8a'/%3E%3Ccircle cx='7' cy='16' r='2.8' fill='%23c77d8a'/%3E%3Cellipse cx='16' cy='21' rx='5' ry='3.8' fill='%23e8b4b8'/%3E%3Ccircle cx='11' cy='12' r='2.2' fill='%23e8b4b8'/%3E%3Ccircle cx='21' cy='12' r='2.2' fill='%23e8b4b8'/%3E%3Ccircle cx='16' cy='9' r='1.8' fill='%23e8b4b8'/%3E%3Ccircle cx='7' cy='16' r='1.8' fill='%23e8b4b8'/%3E%3C/svg%3E") 16 16, auto !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: var(--font-body);
+    font-weight: 400;
+    background: #fffaf7;
+    color: #4a3f4a;
   }
-  *, *::before, *::after, button, a, [role="button"], .cursor-pointer {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='21' rx='7' ry='5.5' fill='%23c77d8a'/%3E%3Ccircle cx='11' cy='12' r='3.5' fill='%23c77d8a'/%3E%3Ccircle cx='21' cy='12' r='3.5' fill='%23c77d8a'/%3E%3Ccircle cx='16' cy='9' r='3' fill='%23c77d8a'/%3E%3Ccircle cx='7' cy='16' r='2.8' fill='%23c77d8a'/%3E%3Cellipse cx='16' cy='21' rx='5' ry='3.8' fill='%23e8b4b8'/%3E%3Ccircle cx='11' cy='12' r='2.2' fill='%23e8b4b8'/%3E%3Ccircle cx='21' cy='12' r='2.2' fill='%23e8b4b8'/%3E%3Ccircle cx='16' cy='9' r='1.8' fill='%23e8b4b8'/%3E%3Ccircle cx='7' cy='16' r='1.8' fill='%23e8b4b8'/%3E%3C/svg%3E") 16 16, auto !important;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    line-height: 1.2;
   }
+
+  button {
+    font-family: var(--font-display);
+    letter-spacing: 0.015em;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+  @media (pointer: fine) {
+    html.chocolate-cursor-active,
+    html.chocolate-cursor-active * {
+      cursor: url('/images/chocolate-cursor.svg') 2 8, auto !important;
+    }
+  }
+}
+
+.birthday-background {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 237, 243, 0.75), transparent 46%),
+    linear-gradient(180deg, #fff8f7 0%, #fffaf8 54%, #f1ebfa 100%);
+}
+
+.birthday-background :is(h1, h2, h3, h4, h5, h6),
+.birthday-background button {
+  font-weight: 400;
+}
+
+.welcome-speech-bubble {
+  bottom: calc(100% + 0.75rem);
+}
+
+.welcome-speech-bubble::after {
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-right: 1px solid #f1d9df;
+  border-bottom: 1px solid #f1d9df;
+  background: #fff;
+  content: '';
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.love-letter-paper {
+  background-color: #fffaf0;
+  background-image:
+    radial-gradient(ellipse at 18% 22%, rgba(166, 127, 94, 0.035) 0 1px, transparent 1.5px),
+    radial-gradient(ellipse at 78% 64%, rgba(166, 127, 94, 0.03) 0 1px, transparent 1.5px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.42), transparent 60%);
+  background-size: 13px 15px, 17px 19px, 100% 100%;
+}
+
+.love-letter-copy {
+  font-family: var(--font-cassandra);
+  font-size: clamp(1.15rem, 2.7vw, 1.4rem);
+  line-height: 1.8;
+}
+
+.letter-greeting {
+  font-family: var(--font-cassandra);
+}
+
+.romantic-envelope {
+  width: min(320px, 78vw);
+  height: 205px;
+  overflow: visible;
+  border: 1px solid #e6cdc1;
+  border-radius: 12px;
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(166, 127, 94, 0.045) 0 1px, transparent 1.5px),
+    radial-gradient(ellipse at 78% 64%, rgba(166, 127, 94, 0.035) 0 1px, transparent 1.5px),
+    linear-gradient(145deg, #fff8f1, #f8e9e9);
+  background-size: 13px 15px, 17px 19px, 100% 100%;
+  box-shadow: 0 20px 34px rgba(153, 105, 113, 0.18);
+  isolation: isolate;
+}
+
+.romantic-envelope::before,
+.romantic-envelope::after {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  height: 0;
+  border-style: solid;
+  content: '';
+}
+
+.romantic-envelope::before {
+  border-width: 0 159px 118px;
+  border-color: transparent transparent #f4e3df;
+  filter: drop-shadow(0 -1px 1px rgba(166, 127, 94, 0.12));
+}
+
+.romantic-envelope::after {
+  border-width: 102px 0 0 160px;
+  border-color: transparent transparent transparent rgba(239, 218, 214, 0.78);
+}
+
+.envelope-letter-preview {
+  position: absolute;
+  z-index: 1;
+  top: 21px;
+  left: 50%;
+  width: 72%;
+  height: 76%;
+  border: 1px solid #e9dccb;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #fffdf6, #fff8ed);
+  transform: translateX(-50%);
+}
+
+.envelope-flap {
+  position: absolute;
+  z-index: 4;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 112px;
+  border: 1px solid #e5ccc4;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(145deg, #f8e9e5, #fff6f0);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1), opacity 450ms ease;
+}
+
+.envelope-flap.is-open {
+  transform: rotateX(180deg);
+  opacity: 0.4;
+}
+
+.envelope-seal {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,0.65);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d89aa5, #a95970);
+  color: #fff3f4;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(135, 71, 86, 0.23);
+  transform: translate(-50%, -40%);
+  transition: opacity 250ms ease, transform 500ms ease;
+}
+
+.envelope-seal.is-open {
+  opacity: 0;
+  transform: translate(-50%, -120%) scale(0.7);
+}
+
+.birthday-reveal {
+  isolation: isolate;
+}
+
+.birthday-garland {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  width: 54%;
+  height: clamp(100px, 14vw, 160px);
+  pointer-events: none;
+}
+
+.birthday-garland-left {
+  left: -1%;
+}
+
+.birthday-garland-right {
+  right: -1%;
+}
+
+.birthday-garland svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: top center;
+  animation: garland-swing 5s ease-in-out 1s infinite;
+}
+
+.garland-string {
+  fill: none;
+  stroke: rgba(178, 137, 151, 0.62);
+  stroke-width: 2.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.garland-flag {
+  stroke: rgba(255,255,255,0.5);
+  stroke-width: 1;
+  filter: drop-shadow(0 2px 3px rgba(145, 105, 125, 0.12));
+}
+
+.garland-flag-0 { fill: #efc7d2; }
+.garland-flag-1 { fill: #d8cbea; }
+.garland-flag-2 { fill: #f0dfc7; }
+.garland-flag-3 { fill: #f2d0c0; }
+
+.garland-bulb {
+  fill: #fff3c4;
+  opacity: 0.2;
+  filter: drop-shadow(0 0 2px rgba(255, 226, 145, 0.4));
+  animation: fairy-light-glow 2.4s ease-in-out var(--light-delay, 1s) infinite alternate;
+}
+
+.birthday-confetti {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  width: 8px;
+  height: 11px;
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.birthday-confetti-0 { background: #e8adbf; }
+.birthday-confetti-1 { background: #c9b8e3; }
+.birthday-confetti-2 { background: #e9d2a9; }
+.birthday-confetti-3 { background: #f2cdbd; }
+.birthday-confetti-4 { background: #fff0dc; }
+
+.birthday-confetti-shape-1 {
+  width: 4px;
+  height: 18px;
+  border-radius: 999px;
+}
+
+.birthday-confetti-shape-2 {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.birthday-balloon {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: var(--balloon-width, 30px);
+  height: var(--balloon-height, 42px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50% 50% 47% 47%;
+  box-shadow: inset -4px -3px 7px rgba(104, 76, 110, 0.1), 0 4px 10px rgba(111, 77, 102, 0.1);
+  pointer-events: none;
+}
+
+.birthday-balloon::before {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-top: 6px solid currentColor;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.birthday-balloon::after {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  width: 1px;
+  height: 52px;
+  background: currentColor;
+  opacity: 0.45;
+  content: '';
+}
+
+.birthday-balloon-0 { color: #d78da2; background: rgba(245, 196, 209, 0.78); }
+.birthday-balloon-1 { color: #9c8ac6; background: rgba(210, 198, 236, 0.78); }
+.birthday-balloon-2 { color: #d99a83; background: rgba(250, 216, 198, 0.78); }
+.birthday-balloon-3 { color: #c8949f; background: rgba(244, 211, 216, 0.78); }
+.birthday-balloon-4 { color: #baa574; background: rgba(247, 232, 190, 0.78); }
+
+.birthday-name {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(46px, 6.2vw, 84px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.015em;
+}
+
+.birthday-name-emoji {
+  font-family: var(--font-body);
+  font-size: 0.55em;
+  line-height: 1;
+}
+
+.polaroid-row {
+  position: relative;
+}
+
+.polaroid-string {
+  position: absolute;
+  top: 24px;
+  left: 2%;
+  width: 96%;
+  height: 1px;
+  background: #cfaeb6;
+  box-shadow: 0 2px 3px rgba(114, 75, 86, 0.12);
+  transform: rotate(-0.4deg);
+}
+
+.polaroid-row:nth-child(2) .polaroid-string {
+  transform: rotate(0.35deg);
+}
+
+.polaroid-frame {
+  animation: polaroid-sway 5.5s ease-in-out infinite;
+  animation-delay: var(--photo-delay, 0s);
+  transform: rotate(var(--photo-rotate, 0deg));
+  transform-origin: top center;
+}
+
+.polaroid-clip {
+  position: absolute;
+  z-index: 2;
+  top: -8px;
+  left: 50%;
+  width: 19px;
+  height: 28px;
+  border: 1px solid rgba(165, 121, 127, 0.42);
+  border-radius: 4px 4px 7px 7px;
+  background: linear-gradient(90deg, #e9c6cb, #f6e5d7);
+  box-shadow: 0 2px 4px rgba(101, 69, 76, 0.15);
+  transform: translateX(-50%);
+}
+
+.photo-caption {
+  font-family: var(--font-romantic);
+  font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+}
+
+.wishes-connector {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 50%;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  color: #d29baa;
+  transform: translate(-50%, -50%);
+}
+
+.wishes-connector::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  height: 56px;
+  border-left: 1px solid #e7cbd2;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.love-contract-paper {
+  background-color: #fffaf0;
+  background-image:
+    radial-gradient(ellipse at 18% 22%, rgba(166, 127, 94, 0.04) 0 1px, transparent 1.5px),
+    radial-gradient(ellipse at 78% 64%, rgba(166, 127, 94, 0.035) 0 1px, transparent 1.5px),
+    linear-gradient(135deg, rgba(255,255,255,0.48), transparent 60%);
+  background-size: 13px 15px, 17px 19px, 100% 100%;
+}
+
+.official-seal {
+  z-index: 2;
+  border: 2px solid rgba(255, 242, 240, 0.8);
+  outline: 1px dashed rgba(255, 242, 240, 0.65);
+  outline-offset: -6px;
+  background: radial-gradient(circle at 35% 30%, #cf8792, #a84c60);
+  transform: rotate(9deg);
+}
+
+.contract-divider {
+  position: relative;
+  margin: 22px 0 16px;
+  height: 1px;
+  background: #e4d3c4;
+  text-align: center;
+}
+
+.contract-divider span {
+  position: relative;
+  top: -12px;
+  display: inline-block;
+  padding: 0 10px;
+  background: #fffaf0;
+  color: #c88496;
+  font-size: 20px;
+}
+
+.signed-stamp {
+  border: 1px solid rgba(173, 94, 113, 0.4);
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: #a75469;
+  transform: rotate(-2deg);
+}
+
+.chocolate-bar-art {
+  display: grid;
+  width: 47px;
+  height: 33px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid #4d2922;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #81503a, #4f2c24 70%);
+  box-shadow: inset 1px 1px 1px rgba(255, 224, 188, 0.45), 0 3px 6px rgba(73, 42, 34, 0.2);
+  transform: rotate(-8deg);
+}
+
+.chocolate-bar-art span {
+  border: 1px solid rgba(57, 30, 25, 0.52);
+  border-radius: 2px;
+  background: linear-gradient(135deg, #946249, #70422f 70%);
+  box-shadow: inset 1px 1px 1px rgba(255, 232, 198, 0.24);
+}
+
+.chocolate-piece {
+  cursor: grab;
+  touch-action: manipulation;
+}
+
+.chocolate-piece:active {
+  cursor: grabbing;
+}
+
+.selected-chocolate {
+  background: #f7e3ea;
+  box-shadow: 0 0 0 2px #ce91a4, 0 5px 12px rgba(151, 92, 113, 0.18);
+}
+
+.chocolate-flight {
+  position: fixed;
+  z-index: 150;
+  pointer-events: none;
+}
+
+.feed-heart {
+  position: absolute;
+  z-index: 5;
+  top: 38%;
+  left: calc(50% + 50px);
+  color: #df8ca8;
+  font-size: 23px;
+  pointer-events: none;
 }
 
 @keyframes glow {
@@ -48,10 +518,55 @@
   50% { transform: rotate(var(--swing-end, 2deg)); }
 }
 
+@keyframes garland-swing {
+  0%, 100% { transform: rotate(-0.4deg); }
+  50% { transform: rotate(0.4deg); }
+}
+
+@keyframes fairy-light-glow {
+  from {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 2px rgba(255, 226, 145, 0.35));
+  }
+  to {
+    opacity: 1;
+    filter: drop-shadow(0 0 7px rgba(255, 226, 145, 0.95));
+  }
+}
+
+@keyframes polaroid-sway {
+  0%, 100% { transform: rotate(var(--photo-rotate, 0deg)); }
+  50% { transform: rotate(calc(var(--photo-rotate, 0deg) + 1.5deg)); }
+}
+
+@media (max-width: 640px) {
+  .birthday-garland {
+    width: 57%;
+    height: 100px;
+  }
+
+  .birthday-name {
+    font-size: clamp(46px, 12vw, 55px);
+  }
+
+  .romantic-envelope::before {
+    border-width: 0 calc(min(39vw, 159px)) 118px;
+  }
+
+  .romantic-envelope::after {
+    border-width: 102px 0 0 calc(min(39vw, 160px));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .birthday-garland svg,
+  .garland-bulb {
+    animation: none !important;
   }
 }

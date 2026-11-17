@@ -1,6 +1,6 @@
-# Happy Birthday Havya
+# Happy 19th Birthday Susmitha
 
-A personal interactive birthday surprise web experience.
+A personal, continuously scrollable birthday story for Susmitha.
 
 ## Quick Start
 
@@ -11,32 +11,28 @@ npm run dev
 
 ## Personalization
 
-Edit **`src/data/birthdayData.ts`** to change all content:
+Edit **`src/data/birthdayData.ts`** to change the experience's personalized content:
 
 | What to change | Where in the file |
 |---|---|
-| Havya's name | `herName` |
-| Your name | `myName` |
-| Intro text | `intro.greeting`, `intro.message` |
+| Welcome text | `welcome` object |
+| Birthday reveal | `reveal` object |
+| Warnings | `warnings` object |
+| Spotify dedications | `music.songs` array |
 | Photos & captions | `photos` array |
-| "Special things" cards | `specialThings` array |
-| Quiz questions | `quiz` array (question, options, correctAnswer index, response) |
 | The letter | `letter` string |
-| Wishes | `wishes` array |
-| Birthday coupon | `coupon` object |
+| Wishes | `wishDetails` object |
+| Contract and terms | `contract` and `terms` objects |
 | Final message | `finale` object |
 
 ### Adding Photos
 
 1. Place images in `public/photos/`
 2. Reference them in `birthdayData.photos` as `"/photos/filename.jpg"`
-3. Missing images gracefully show a gradient placeholder
 
 ### Adding Music
 
-1. Place an mp3 at `public/music/birthday.mp3`
-2. A play/pause button appears automatically
-3. If the file is missing, the button hides — site works fine without it
+The looping background track is `public/music/music_full.mp3`. It starts after the visitor's first interaction, remains mounted while scrolling, and can be muted or unmuted from the fixed music button. The six dedication cards link to Spotify search results for their exact song titles; Spotify playback opens separately from the background track.
 
 ## Deploy to Vercel
 

@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, useEffect } from 'react'
+import { useState, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import CuteCat from '../components/CuteCat'
 import FloatingElements from '../components/FloatingElements'
@@ -48,7 +48,7 @@ export default function CatGame() {
     return { x, y }
   }
 
-  function startRound() {
+  const startRound = useCallback(() => {
     const pos = getRandomPos()
     setCatPos(pos)
     setCatSpeech(CAT_ESCAPE_MESSAGES[Math.min(round, 4)][0])
@@ -57,14 +57,11 @@ export default function CatGame() {
     setSlicePos(null)
     setDragging(false)
     setShowSuccess(false)
-  }
-
-  useEffect(() => {
-    if (phase === 'play') startRound()
-  }, [phase, round])
+  }, [round])
 
   function handleCutCake() {
     setPhase('play')
+    startRound()
   }
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
@@ -86,6 +83,37 @@ export default function CatGame() {
     }
   }, [slicePos, showSuccess])
 
+  const feedCat = useCallback(() => {
+    setDragging(false)
+    setShowSuccess(true)
+    setCatMood('happy')
+    setCatSpeech(SUCCESS_MESSAGES[round])
+    setSlicePos({ x: catPos.x + 20, y: catPos.y + 40 })
+
+    setTimeout(() => {
+      if (round + 1 >= total) {
+        setPhase('success')
+      } else {
+        setRound(r => r + 1)
+      }
+    }, 1800)
+  }, [catPos.x, catPos.y, round])
+
+  const escapeCat = useCallback((fromX: number, fromY: number) => {
+    const maxEscapes = round < 4 ? 2 + round : 2
+    if (escapes >= maxEscapes) {
+      feedCat()
+      return
+    }
+    setEscapes(e => e + 1)
+    const newPos = getRandomPos(fromX, fromY)
+    setCatPos(newPos)
+    setCatMood('excited')
+    const msgs = CAT_ESCAPE_MESSAGES[Math.min(round, 4)]
+    setCatSpeech(msgs[1] || msgs[0])
+    setTimeout(() => setCatMood('idle'), 800)
+  }, [escapes, feedCat, round])
+
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
     if (!dragging || !containerRef.current) return
     const rect = containerRef.current.getBoundingClientRect()
@@ -102,42 +130,11 @@ export default function CatGame() {
         escapeCat(x, y)
       }
     }
-  }, [dragging, catPos, round, escapes])
+  }, [dragging, catPos.x, catPos.y, round, escapes, escapeCat, feedCat])
 
   const handlePointerUp = useCallback(() => {
     setDragging(false)
   }, [])
-
-  function escapeCat(fromX: number, fromY: number) {
-    const maxEscapes = round < 4 ? 2 + round : 2
-    if (escapes >= maxEscapes) {
-      feedCat()
-      return
-    }
-    setEscapes(e => e + 1)
-    const newPos = getRandomPos(fromX, fromY)
-    setCatPos(newPos)
-    setCatMood('excited')
-    const msgs = CAT_ESCAPE_MESSAGES[Math.min(round, 4)]
-    setCatSpeech(msgs[1] || msgs[0])
-    setTimeout(() => setCatMood('idle'), 800)
-  }
-
-  function feedCat() {
-    setDragging(false)
-    setShowSuccess(true)
-    setCatMood('happy')
-    setCatSpeech(SUCCESS_MESSAGES[round])
-    setSlicePos({ x: catPos.x + 20, y: catPos.y + 40 })
-
-    setTimeout(() => {
-      if (round + 1 >= total) {
-        setPhase('success')
-      } else {
-        setRound(r => r + 1)
-      }
-    }, 1800)
-  }
 
   // INTRO
   if (phase === 'intro') {
