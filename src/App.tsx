@@ -329,13 +329,17 @@ function MusicScreen() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {birthdayData.music.songs.map((song, index) => (
-            <motion.article
+            <motion.a
               key={song.song}
+              href={song.spotifyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${song.song} on Spotify`}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ delay: index * 0.07, duration: 0.5 }}
-              className="rounded-[26px] border border-[#f0d8d9] bg-white/75 p-5 shadow-[0_18px_32px_rgba(180,130,145,0.1)] backdrop-blur-md"
+              className="group block rounded-[26px] border border-[#f0d8d9] bg-white/75 p-5 shadow-[0_18px_32px_rgba(180,130,145,0.1)] backdrop-blur-md transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#61956a]"
             >
               <div className="mb-4 flex items-start justify-between gap-3">
                 <div>
@@ -345,19 +349,13 @@ function MusicScreen() {
                 <span className="text-xl" aria-hidden="true">{song.emoji}</span>
               </div>
               <p className="mb-5 text-lg text-[#7d4b5d]">{song.song}</p>
-              <a
-                href={`https://open.spotify.com/search/${encodeURIComponent(song.song)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#d6e8d2] bg-[#f4fbf2] px-4 py-2.5 text-sm text-[#416746] transition hover:bg-[#eaf6e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#61956a]"
-                aria-label={`Search Spotify for ${song.song}`}
-              >
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#d6e8d2] bg-[#f4fbf2] px-4 py-2.5 text-sm text-[#416746] transition group-hover:bg-[#eaf6e7]">
                 <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
                   <path d="M12 1.8a10.2 10.2 0 1 0 0 20.4 10.2 10.2 0 0 0 0-20.4Zm4.68 14.7a.63.63 0 0 1-.87.2c-2.4-1.47-5.42-1.8-8.98-.98a.63.63 0 1 1-.28-1.22c3.9-.9 7.25-.52 9.93 1.13a.63.63 0 0 1 .2.87Zm1.24-2.75a.8.8 0 0 1-1.1.26c-2.75-1.69-6.94-2.18-10.2-1.19a.8.8 0 1 1-.47-1.54c3.72-1.13 8.34-.58 11.5 1.36a.8.8 0 0 1 .27 1.1Zm.1-2.87c-3.3-1.96-8.74-2.14-11.9-1.18a.96.96 0 1 1-.56-1.84c3.64-1.1 9.7-.89 13.54 1.39a.96.96 0 0 1-1.08 1.63Z" />
                 </svg>
                 Listen on Spotify
-              </a>
-            </motion.article>
+              </span>
+            </motion.a>
           ))}
         </div>
       </div>

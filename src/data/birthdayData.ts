@@ -1,7 +1,7 @@
 export const birthdayData = {
   herName: "SUSMITHA",
   myName: "kannaya",
-  birthday: "December 15",
+  birthday: "December 16",
   age: 19,
 
   intro: {
@@ -52,12 +52,12 @@ export const birthdayData = {
     heading: "Every Melody Has A Little Of You",
     subtitle: "A few melodies, just for you",
     songs: [
-      { dedication: "My Beautiful Jabili", song: "Jaamurathri", emoji: "🌙" },
-      { dedication: "Lost In Your Eyes", song: "Vaalu Kanuladana", emoji: "👀" },
-      { dedication: "My Heart Found You", song: "Yeto Vellipoindi Manasu", emoji: "💞" },
-      { dedication: "Beauty Of My Dreams", song: "Andamaina Premarani", emoji: "🌹" },
-      { dedication: "All Because Of You", song: "Naa Manasukemaindi", emoji: "💗" },
-      { dedication: "My Destination", song: "Oh Cheliya", emoji: "🦋" },
+      { dedication: "My Beautiful Jabili", song: "Jaamurathri", emoji: "🌙", spotifyUrl: "https://open.spotify.com/track/5jVZ2TvUUf1DC9kRA61U3D" },
+      { dedication: "Lost In Your Eyes", song: "Vaalu Kanuladana", emoji: "👀", spotifyUrl: "https://open.spotify.com/track/4SuPGTvtwdDq9UWXNj8iOd" },
+      { dedication: "My Heart Found You", song: "Yeto Vellipoindi Manasu", emoji: "💞", spotifyUrl: "https://open.spotify.com/album/5H8szg85SCzImaWqtqoMOG" },
+      { dedication: "Beauty Of My Dreams", song: "Andamaina Premarani", emoji: "🌹", spotifyUrl: "https://open.spotify.com/track/4eEr2PZB3WJp74qkxzQrLS" },
+      { dedication: "All Because Of You", song: "Naa Manasukemaindi", emoji: "💗", spotifyUrl: "https://open.spotify.com/track/4f1hGOW2JQJfwVMpeSorsO" },
+      { dedication: "My Destination", song: "Oh Cheliya", emoji: "🦋", spotifyUrl: "https://open.spotify.com/track/72LYxcFCqZG8Hw9hH9RzKJ" },
     ],
   },
 
@@ -129,7 +129,7 @@ Happy Birthday, my favourite kutti! 🎂🎀💖`,
     heading: "Happy 19th Birthday, Susmiii! 💗",
     signature: "With all my love,",
     sender: "kannaya ❤️",
-    date: "December 15",
+    date: "December 16",
     buttonText: "Experience it again 💗",
     message: "We're really glad our paths crossed.",
     closing: "You deserve a really good one. 🌷",
